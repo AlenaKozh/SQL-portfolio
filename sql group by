@@ -1,0 +1,9 @@
+SELECT 
+    user_id,
+    COUNT(user_id) AS deals, 
+    SUM(amount) as sum_amount, 
+    max(amount) as max_amount 
+from deals
+where status = "closed"
+group by user_id
+having deals>2
