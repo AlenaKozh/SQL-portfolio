@@ -1,0 +1,11 @@
+(select c.name as country, cit.name as city 
+from countries  as c
+left join cities as cit 
+on  c.id = cit.country)
+union
+(select c.name as country, cit.name as city 
+from countries  as c
+right join cities as cit 
+on  c.id = cit.country)
+
+order by country, city
