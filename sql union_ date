@@ -1,0 +1,10 @@
+select year (date) as year,  month(date) as month, sum(amount) as month_amount from
+
+(select *from bank_transactions
+union 
+select * from cashbox_transactions
+union
+select * from paypal_transactions) tabl
+
+group by year, month
+order by year,month
