@@ -1,0 +1,4 @@
+select id, name, price from products
+where (match(name) against ('+Mango +джинс*' in boolean mode) or
+match(name) against ('+Mango +юбк*' in boolean mode)) and count>0 
+order by price
