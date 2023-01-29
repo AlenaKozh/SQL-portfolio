@@ -1,0 +1,5 @@
+select cars.id, marks.name as mark, models.name as model , cars.price as price
+from cars
+join models on models.id = cars.model_id
+join marks on models.mark_id = marks.id
+order by cars.price desc
