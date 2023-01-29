@@ -1,0 +1,11 @@
+select type,  sum(amount) as sum_amount from
+(select "bank" as type, amount
+from bank_transactions
+union 
+select "cash" as type, amount
+from cashbox_transactions
+union
+select "paypal" as type, amount
+from paypal_transactions) tabl
+group by type
+order by sum_amount
